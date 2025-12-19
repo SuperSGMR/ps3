@@ -2,120 +2,128 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR | Oficial</title>
+    <title>Block SuperSGMR | PS3 Interface</title>
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
+        /* Optimización para PS3: Colores fijos y pocos efectos pesados */
         :root {
-            --neon-red: #ff003c;
-            --neon-purple: #9d00ff;
-            --neon-blue: #00d4ff;
+            --red: #ff003c;
+            --purple: #9d00ff;
+            --blue: #00d4ff;
+            --dark: #0a0a0a;
         }
 
         body {
             margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Rajdhani', sans-serif;
-            background-color: #050505;
-            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('fondo.jpg');
+            background-color: #000;
+            /* Fondo de imagen optimizado */
+            background-image: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('fondo.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             color: white;
-            overflow-x: hidden;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            padding-top: 50px;
         }
 
-        .main-panel {
-            background: rgba(10, 10, 10, 0.85);
-            border: 2px solid var(--neon-purple);
-            box-shadow: 0 0 20px var(--neon-purple), inset 0 0 10px var(--neon-purple);
-            padding: 50px;
-            border-radius: 5px;
-            text-align: center;
-            max-width: 90%;
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
+        /* Título con tu degradado unificado */
+        .title-container {
+            margin-bottom: 40px;
         }
 
         h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             margin: 0;
             text-transform: uppercase;
-            font-weight: 900;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
 
-        /* Efecto unificado para "Blo" y la segunda "S" */
-        /* Empieza en el rojo exacto y se difumina hacia azul/morado */
+        /* Clase para el rojo que se difumina (Blo y la segunda S) */
         .red-fade {
-            background: linear-gradient(to right, var(--neon-red) 20%, var(--neon-blue), var(--neon-purple));
+            background: linear-gradient(to right, var(--red), var(--purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Brillo suave unificado */
-            filter: drop-shadow(0 0 5px rgba(255, 0, 60, 0.4));
+            color: var(--red); /* Fallback para PS3 */
         }
 
-        /* "ck Super" y "GMR" mantienen el flujo de color */
-        .blue-purp-fade {
-            background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
+        /* Clase para el resto del texto */
+        .purp-blue-fade {
+            background: linear-gradient(to right, var(--purple), var(--blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            color: var(--blue); /* Fallback para PS3 */
+        }
+
+        /* Panel Central compatible con PS3 */
+        .menu-container {
+            background: rgba(20, 20, 20, 0.9);
+            border-top: 3px solid var(--purple);
+            border-bottom: 3px solid var(--blue);
+            display: inline-block;
+            padding: 40px;
+            width: 80%;
+            max-width: 700px;
+            border-radius: 10px;
+        }
+
+        /* Sistema de Botones con animación de elección */
+        .btn-group {
+            display: block;
+            margin: 15px 0;
+            text-decoration: none;
+            padding: 15px;
+            color: white;
+            border: 1px solid #333;
+            background: rgba(255, 255, 255, 0.05);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transition: all 0.2s; /* Animación rápida para evitar lag */
+            border-left: 5px solid transparent;
+        }
+
+        /* Animación de elección (Hover) */
+        .btn-group:hover {
+            background: var(--red);
+            color: #000;
+            border-left: 10px solid var(--blue);
+            transform: scale(1.02);
+            font-weight: bold;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            letter-spacing: 10px;
-            color: var(--neon-blue);
-            margin-top: 10px;
-            font-weight: bold;
-            text-shadow: 0 0 5px var(--neon-blue);
+            color: var(--blue);
+            letter-spacing: 5px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
-        .btn-sgmr {
+        .footer-info {
             margin-top: 30px;
-            padding: 15px 40px;
-            background: transparent;
-            border: 2px solid var(--neon-red);
-            color: var(--neon-red);
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-sgmr:hover {
-            background: var(--neon-red);
-            color: black;
-            box-shadow: 0 0 30px var(--neon-red);
-            transform: scale(1.05);
-        }
-
-        .decoration {
-            height: 2px;
-            width: 100%;
-            background: linear-gradient(to right, transparent, var(--neon-purple), transparent);
-            margin: 20px 0;
+            font-size: 0.7rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-panel">
+    <div class="title-container">
         <h1>
-            <span class="red-fade">Blo</span><span class="blue-purp-fade">ck Super</span><span class="red-fade">S</span><span class="blue-purp-fade">GMR</span>
+            <span class="red-fade">Blo</span><span class="purp-blue-fade">ck Super</span><span class="red-fade">S</span><span class="purp-blue-fade">GMR</span>
         </h1>
-        <div class="subtitle">SISTEMA ACTIVO</div>
-        <div class="decoration"></div>
-        <p style="letter-spacing: 3px; opacity: 0.8;">RECURSOS • MODDING • HOMEBREW</p>
-        
-        <a href="#" class="btn-sgmr">ACCEDER A ARCHIVOS</a>
+        <div class="subtitle">SISTEMA DE RECURSOS V1.0</div>
+    </div>
+
+    <div class="menu-container">
+        <!-- Nuevos Botones -->
+        <a href="#" class="btn-group">📂 ARCHIVOS PRINCIPALES</a>
+        <a href="#" class="btn-group">🎮 APPS HOMEBREW</a>
+        <a href="#" class="btn-group">🛠️ EXTRAS & MODS</a>
+        <a href="#" class="btn-group">🌐 REDES OFICIALES</a>
+    </div>
+
+    <div class="footer-info">
+        COMPATIBLE CON NAVEGADOR PS3 | 2025
     </div>
 
 </body>
