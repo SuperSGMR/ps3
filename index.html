@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR | Hub</title>
+    <title>Block SuperSGMR | Oficial Hub</title>
     <style>
-        /* ARQUITECTURA FIJA - OPTIMIZADA PARA TAMAÑO PS3 */
+        /* ARQUITECTURA FIJA Y SEGURA - OPTIMIZADA 2025 */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
@@ -20,19 +20,18 @@
 
         .wrapper {
             width: 100%;
-            padding-top: 10px; /* Pegado arriba para que se vea más cerca */
+            padding-top: 10px;
             padding-bottom: 30px;
         }
 
-        /* FUERZA EL TAMAÑO GRANDE EN PS3 */
+        /* TAMAÑO GRANDE PARA PS3 */
         .brand {
-            font-size: 55px; /* Tamaño fijo grande para TV */
+            font-size: 55px; 
             font-weight: 900; 
             text-transform: uppercase;
             margin-bottom: 5px;
             text-shadow: 4px 4px 8px #000000;
             display: block;
-            width: 100%;
         }
 
         .red { color: #FF0000; }
@@ -66,27 +65,40 @@
             box-sizing: border-box;
         }
 
+        /* ESTILO DE LOS BOTONES */
         .menu-item {
             display: block;
             background-color: #1A1A1A;
             color: #FFFFFF;
             text-decoration: none;
-            padding: 22px;
+            padding: 20px;
             margin: 10px 0;
             border: 1px solid #333333;
-            font-size: 20px;
+            font-size: 19px;
             font-weight: bold;
+            transition: 0.2s;
         }
 
-        .menu-item:hover {
+        /* ANIMACIÓN DE ELECCIÓN EN ROJO */
+        .menu-item:hover, .menu-item:active {
             background-color: #FF0000;
             color: #000000;
         }
 
-        /* Ajuste automático para celulares (para que no se corte) */
+        /* SECCIÓN ESPECIAL DE REDES (Botones con colores de marca) */
+        .social-title {
+            color: #9D00FF;
+            font-size: 16px;
+            margin-top: 20px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Media Queries para Celular */
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
             .space-s { margin-left: 10px; margin-right: 10px; }
+            .menu-item { padding: 15px; font-size: 16px; }
         }
     </style>
 </head>
@@ -100,10 +112,18 @@
         <div class="sub-tag">SIGUEME EN MIS REDES SOCIALES</div>
 
         <div class="main-panel">
+            <!-- BOTONES DE CONTENIDO (Aún sin links) -->
             <a href="#" class="menu-item">📂 ARCHIVOS PRINCIPALES</a>
             <a href="#" class="menu-item">🎮 APPS HOMEBREW</a>
             <a href="#" class="menu-item">🛠️ EXTRAS & MODS</a>
-            <a href="#" class="menu-item">🌐 REDES OFICIALES</a>
+
+            <div class="social-title">--- MIS REDES OFICIALES ---</div>
+
+            <!-- BOTONES CON TUS LINKS REALES -->
+            <a href="youtube.com" target="_blank" class="menu-item">📺 YOUTUBE</a>
+            <a href="www.tiktok.com" target="_blank" class="menu-item">🎵 TIKTOK</a>
+            <a href="facebook.com" target="_blank" class="menu-item">📘 FACEBOOK</a>
+            <a href="discord.gg" target="_blank" class="menu-item">💬 DISCORD</a>
         </div>
     </div>
 
