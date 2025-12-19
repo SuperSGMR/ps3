@@ -2,80 +2,101 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Arquitectura optimizada para PS3 - 2025 -->
-    <title>Block SuperSGMR | PS3 Hub</title>
+    <!-- Optimización para Celular y PC -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block SuperSGMR | Multi-Hub</title>
     <style>
-        /* CSS Básico: La PS3 lo lee de arriba hacia abajo sin errores */
+        /* 1. FONDO CON COLORES SUPER S GMR (Rojo, Morado, Azul) */
+        /* Compatible con PS3 (fondo sólido) y PC/Móvil (degradado) */
         body {
-            background-color: #050505; /* Fondo Negro Espacial */
+            background-color: #050505; /* Respaldo para PS3 */
+            background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
             color: #ffffff;
-            font-family: Arial, Helvetica, sans-serif; /* Fuentes internas de PS3 */
+            font-family: Arial, Helvetica, sans-serif;
             margin: 0;
             padding: 0;
             text-align: center;
+            /* Flex para centrar en PC/Móvil sin romper PS3 */
+            display: block; 
         }
 
-        /* Contenedor para evitar que el contenido se desborde */
+        /* 2. ARQUITECTURA FIJA OPTIMIZADA */
         .wrapper {
             width: 100%;
-            padding-top: 30px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            box-sizing: border-box;
         }
 
-        /* Título con colores sólidos (PS3 no soporta degradados en texto) */
         .brand {
-            font-size: 32px;
+            font-size: clamp(28px, 8vw, 50px); /* Se ajusta solo en PC/Móvil */
             font-weight: bold;
             text-transform: uppercase;
             margin-bottom: 5px;
+            text-shadow: 2px 2px 5px #000000;
         }
 
         /* Colores Super S GMR */
         .red { color: #FF0000; }
         .blue { color: #00D4FF; }
-        .purple { color: #9D00FF; }
 
         .sub-tag {
             color: #00D4FF;
             font-size: 14px;
-            letter-spacing: 2px;
-            margin-bottom: 25px;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px #000;
         }
 
-        /* El Panel Central: Usamos bordes sólidos, no sombras pesadas */
+        /* 3. PANEL CENTRAL (Se adapta a PC y Móvil) */
         .main-panel {
-            background-color: #111111;
+            background-color: #111111; /* Color sólido para PS3 */
+            background: rgba(10, 10, 10, 0.9); /* Transparencia para PC/Móvil */
             border: 3px solid #9D00FF;
             display: inline-block;
             width: 90%;
-            max-width: 500px;
-            padding: 20px;
-            border-radius: 10px;
+            max-width: 550px; /* Tamaño ideal en PC */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-sizing: border-box;
         }
 
-        /* Botones: Diseño de lista clásica (Más fácil de usar con el mando) */
+        /* 4. BOTONES (Grandes para táctil y mando) */
         .menu-item {
             display: block;
             background-color: #1A1A1A;
             color: #FFFFFF;
             text-decoration: none;
-            padding: 18px;
-            margin: 10px 0;
+            padding: 20px;
+            margin: 12px 0;
             border: 1px solid #333333;
             font-size: 18px;
             font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s; /* Suave en PC/Móvil */
         }
 
-        /* Cambio de color al seleccionar (Animación de elección) */
-        .menu-item:hover {
+        /* Animación de elección compatible */
+        .menu-item:hover, .menu-item:active {
             background-color: #FF0000;
             color: #000000;
-            border: 1px solid #FFFFFF;
+            transform: scale(1.02); /* Efecto visual en PC */
         }
 
         .footer {
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 12px;
-            color: #555555;
+            color: #eeeeee;
+            letter-spacing: 1px;
+        }
+
+        /* Ajustes extra para PC */
+        @media (min-width: 1000px) {
+            .wrapper { padding-top: 100px; }
+            .menu-item { padding: 25px; font-size: 22px; }
         }
     </style>
 </head>
@@ -87,18 +108,18 @@
             <span class="red">Blo</span><span class="blue">ck Super</span><span class="red">S</span><span class="blue">GMR</span>
         </div>
         
-        <div class="sub-tag">SYSTEM HUB • 2025</div>
+        <div class="sub-tag">PROJECT HUB • 2025</div>
 
-        <!-- Menú Principal -->
+        <!-- Menú Principal Fijo -->
         <div class="main-panel">
             <a href="#" class="menu-item">📂 ARCHIVOS PRINCIPALES</a>
             <a href="#" class="menu-item">🎮 APPS HOMEBREW</a>
-            <a href="#" class="btn menu-item">🛠️ EXTRAS & MODS</a>
+            <a href="#" class="menu-item">🛠️ EXTRAS & MODS</a>
             <a href="#" class="menu-item">🌐 REDES OFICIALES</a>
         </div>
 
         <div class="footer">
-            COMPATIBILIDAD GARANTIZADA: PLAYSTATION 3
+            SISTEMA OPTIMIZADO PARA PC | MÓVIL | PS3
         </div>
     </div>
 
