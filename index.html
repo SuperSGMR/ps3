@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura limpia 2025 - Estilo Independiente */
+        /* Arquitectura 2025 - Fondo Invertido */
         body {
             background-color: #050505;
-            background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
+            /* FONDO INVERTIDO: Comienza con azul y termina en rojo */
+            background-image: linear-gradient(135deg, #0000ff 0%, #800080 50%, #ff0000 100%);
             background-attachment: fixed;
             background-repeat: no-repeat;
             color: #ffffff;
@@ -18,9 +19,9 @@
             text-align: center;
         }
 
-        .wrapper { width: 100%; padding-top: 20px; padding-bottom: 30px; }
+        .wrapper { width: 100%; padding-top: 30px; padding-bottom: 30px; }
 
-        /* NOMBRE: Degradado BLO + S roja con espacio */
+        /* NOMBRE: Degradado BLO + S roja con espacio exacto */
         .brand {
             font-size: 50px;
             font-weight: 900;
@@ -42,24 +43,23 @@
 
         .sub-tag {
             color: #00d4ff; font-size: 18px; font-weight: bold;
-            letter-spacing: 2px; margin-bottom: 30px;
+            letter-spacing: 2px; margin-bottom: 40px;
         }
 
-        /* CONTENEDOR DE BOTONES INDEPENDIENTES */
+        /* BOTONES INDEPENDIENTES */
         .hub-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Separación de 20 entre botones */
+            gap: 20px; /* Separación de 20px */
             width: 96%;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        /* Estructura de cada bloque de botón */
         .menu-block {
-            flex: 1 1 250px;
-            max-width: 300px;
+            flex: 1 1 280px;
+            max-width: 320px;
             display: flex;
             flex-direction: column;
         }
@@ -68,28 +68,29 @@
             background-color: #1a1a1a;
             color: #ffffff;
             text-decoration: none;
-            padding: 15px 25px;
-            font-size: 18px;
+            padding: 18px 25px;
+            font-size: 20px;
             font-weight: bold;
             border: 2px solid #333;
-            border-radius: 10px;
+            border-radius: 12px;
             cursor: pointer;
             width: 100%;
             box-sizing: border-box;
+            transition: 0.3s;
         }
 
         .menu-item:hover {
             background-color: #9d00ff;
-            border-color: #fff;
+            border-color: #ffffff;
         }
 
-        /* SUBMENÚS: Despliegue independiente hacia abajo */
+        /* SUBMENÚS: Despliegue hacia abajo */
         .submenu {
             display: none;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             border: 2px solid #9d00ff;
             margin-top: 10px;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
             text-align: left;
         }
@@ -98,8 +99,8 @@
             display: block;
             color: #00d4ff;
             text-decoration: none;
-            padding: 12px 15px;
-            font-size: 16px;
+            padding: 15px 20px;
+            font-size: 17px;
             font-weight: bold;
             border-bottom: 1px solid #222;
         }
@@ -109,9 +110,9 @@
             color: #ff0000;
         }
 
-        /* FOOTER FIJO */
+        /* PIE DE PAGINA FIJO */
         footer {
-            margin-top: 50px;
+            margin-top: 60px;
             font-size: 14px;
             font-weight: bold;
             color: #ffffff;
@@ -130,7 +131,7 @@
 
     <div class="hub-container">
         
-        <!-- Bloque Independiente: JUEGOS -->
+        <!-- JUEGOS -->
         <div class="menu-block">
             <div class="menu-item" onclick="toggleMenu('m1')">🎮 JUEGOS</div>
             <div id="m1" class="submenu">
@@ -140,7 +141,7 @@
             </div>
         </div>
 
-        <!-- Bloque Independiente: APPS -->
+        <!-- APPS -->
         <div class="menu-block">
             <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
             <div id="m2" class="submenu">
@@ -150,7 +151,7 @@
             </div>
         </div>
 
-        <!-- Bloque Independiente: TIENDAS -->
+        <!-- TIENDAS -->
         <div class="menu-block">
             <div class="menu-item" onclick="toggleMenu('m3')">🏪 TIENDAS</div>
             <div id="m3" class="submenu">
@@ -162,7 +163,7 @@
 
     </div>
 
-    <!-- PIE DE PAGINA PROTEGIDO -->
+    <!-- TEXTO FIJO -->
     <footer>
         PAGINA OFICIAL
     </footer>
@@ -172,11 +173,7 @@
     function toggleMenu(id) {
         var menu = document.getElementById(id);
         var isVisible = menu.style.display === "block";
-        
-        // Oculta otros menús para que no se encimen
         document.querySelectorAll('.submenu').forEach(m => m.style.display = 'none');
-        
-        // Si estaba oculto, lo despliega hacia abajo
         if (!isVisible) {
             menu.style.display = "block";
         }
