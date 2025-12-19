@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura fija 2025 - Sin Sombras */
+        /* Arquitectura fija 2025 - Limpia y sin sombras */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
@@ -20,7 +20,7 @@
 
         .wrapper { width: 100%; padding-top: 20px; padding-bottom: 30px; }
 
-        /* NOMBRE: Degradado en BLO + S roja con espacio lateral */
+        /* NOMBRE: Degradado BLO + S roja con espacio */
         .brand {
             font-size: 50px;
             font-weight: 900;
@@ -30,14 +30,13 @@
             background: linear-gradient(to right, #ff0000, #00d4ff, #ffffff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* Sombra eliminada */
         }
 
         .red-s-fix {
             color: #ff0000 !important;
             -webkit-text-fill-color: #ff0000 !important;
             display: inline-block;
-            margin-left: 20px; /* 20 espacios de separación para la S */
+            margin-left: 20px;
             margin-right: 20px;
         }
 
@@ -46,7 +45,7 @@
             letter-spacing: 2px; margin-bottom: 25px;
         }
 
-        /* INTERFAZ: Botones uno al lado del otro con 20px de separación */
+        /* PANEL PRINCIPAL: Botones uno al lado del otro */
         .main-panel {
             background: rgba(10, 10, 10, 0.95);
             border: 3px solid #9d00ff;
@@ -57,14 +56,13 @@
             padding: 25px;
             border-radius: 20px;
             box-sizing: border-box;
-            /* Sombra eliminada */
         }
 
         .button-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px; /* Separación de 20 entre cada botón */
+            gap: 20px; /* Separación de 20px entre botones */
         }
 
         .menu-item {
@@ -77,47 +75,41 @@
             border: 2px solid #333;
             border-radius: 10px;
             cursor: pointer;
-            flex: 1 1 auto; /* Permite que se ajusten uno al lado del otro */
-            min-width: 120px;
+            flex: 1 1 auto;
+            min-width: 140px;
         }
 
         .menu-item:hover { background-color: #9d00ff; border-color: #fff; }
 
-        /* Submenús */
+        /* SUBMENÚS: Despliegue hacia abajo */
         .submenu {
             display: none;
             width: 100%;
             background: #000;
-            border: 1px solid #9d00ff;
-            margin-top: 10px;
-            border-radius: 8px;
+            border: 2px solid #9d00ff;
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
         .sub-option {
             display: block;
             color: #00d4ff;
             text-decoration: none;
-            padding: 10px;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: bold;
             border-bottom: 1px solid #222;
         }
 
-        /* PROTEGIDO: REDES SOCIALES */
-        .social-section {
-            width: 100%;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid #444;
-        }
-        .social-title { font-size: 16px; color: #00d4ff; margin-bottom: 15px; font-weight: bold; }
-        .social-links { display: flex; justify-content: center; gap: 20px; }
-        .social-btn {
-            background: #222; color: white; padding: 10px 15px;
-            text-decoration: none; border-radius: 5px; border: 1px solid #9d00ff;
+        .sub-option:hover {
+            background: #111;
+            color: #ff0000;
         }
 
-        /* PROTEGIDO: PAGINA OFICIAL */
+        /* FOOTER PROTEGIDO */
         footer {
-            margin-top: 25px;
+            margin-top: 40px;
             font-size: 14px;
             font-weight: bold;
             color: #ffffff;
@@ -128,7 +120,7 @@
 <body>
 
 <div class="wrapper">
-    <!-- NOMBRE: BLO DEGRADADO + S ROJA CON ESPACIO -->
+    <!-- NOMBRE CON DEGRADADO Y S ROJA -->
     <div class="brand">
         BLOCK SUPER<span class="red-s-fix">S</span>GMR
     </div>
@@ -140,27 +132,35 @@
             <div class="menu-item" onclick="toggleMenu('m2')">🛠️ APPS</div>
             <div class="menu-item" onclick="toggleMenu('m3')">📂 DESCARGAS</div>
             <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
-            <a href="#" class="menu-item">🌐 COMUNIDAD</a>
         </div>
 
-        <!-- Contenedores de submenú -->
-        <div id="m1" class="submenu"><a href="#" class="sub-option">VER JUEGOS</a></div>
-        <div id="m2" class="submenu"><a href="#" class="sub-option">VER APPS</a></div>
-        <div id="m3" class="submenu"><a href="#" class="sub-option">DESCARGAS DIRECTAS</a></div>
-        <div id="m4" class="submenu"><a href="#" class="sub-option">CONTENIDO EXTRA</a></div>
-
-        <!-- SECCIÓN REDES SOCIALES (MANTENIDA) -->
-        <div class="social-section">
-            <div class="social-title">SÍGUEME EN MIS REDES SOCIALES</div>
-            <div class="social-links">
-                <a href="#" class="social-btn">YouTube</a>
-                <a href="#" class="social-btn">Twitter</a>
-                <a href="#" class="social-btn">Instagram</a>
-            </div>
+        <!-- Contenedores que se despliegan hacia abajo -->
+        <div id="m1" class="submenu">
+            <a href="#" class="sub-option">INSTALAR JUEGOS</a>
+            <a href="#" class="sub-option">EMULADORES</a>
+            <a href="#" class="sub-option">RETRO GAMING</a>
+        </div>
+        
+        <div id="m2" class="submenu">
+            <a href="#" class="sub-option">HERRAMIENTAS DE SISTEMA</a>
+            <a href="#" class="sub-option">MULTIMEDIA</a>
+            <a href="#" class="sub-option">OPTIMIZADORES</a>
+        </div>
+        
+        <div id="m3" class="submenu">
+            <a href="#" class="sub-option">DESCARGAR ISOS</a>
+            <a href="#" class="sub-option">ARCHIVOS PKG</a>
+            <a href="#" class="sub-option">SAVEGAMES</a>
+        </div>
+        
+        <div id="m4" class="submenu">
+            <a href="#" class="sub-option">WALLPAPERS 4K</a>
+            <a href="#" class="sub-option">MODS Y PARCHES</a>
+            <a href="#" class="sub-option">MÚSICA</a>
         </div>
     </div>
 
-    <!-- PIE DE PAGINA (MANTENIDO) -->
+    <!-- PIE DE PAGINA MANTENIDO -->
     <footer>
         PAGINA OFICIAL
     </footer>
@@ -170,8 +170,14 @@
     function toggleMenu(id) {
         var menu = document.getElementById(id);
         var isVisible = menu.style.display === "block";
+        
+        // Oculta todos los submenús antes de mostrar el seleccionado
         document.querySelectorAll('.submenu').forEach(m => m.style.display = 'none');
-        if (!isVisible) { menu.style.display = "block"; }
+        
+        // Si no era visible, lo muestra hacia abajo
+        if (!isVisible) {
+            menu.style.display = "block";
+        }
     }
 </script>
 
