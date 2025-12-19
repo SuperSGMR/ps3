@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Block SuperSGMR | Oficial</title>
-    <!-- Fuente Tecnológica de Google Fonts -->
     <link href="fonts.googleapis.com" rel="stylesheet">
     <style>
         :root {
@@ -22,7 +21,7 @@
             align-items: center;
             font-family: 'Rajdhani', sans-serif;
             background-color: #050505;
-            /* 1. FONDO DE IMAGEN (Asegúrate de subir fondo.jpg a GitHub) */
+            /* Se mantiene el fondo de imagen igual que antes */
             background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('fondo.jpg');
             background-size: cover;
             background-position: center;
@@ -31,32 +30,46 @@
             overflow-x: hidden;
         }
 
-        /* Contenedor Estilo Panel de Control */
+        /* El panel se mantiene igual con el clip-path gamer */
         .main-panel {
-            background: rgba(10, 10, 10, 0.8);
+            background: rgba(10, 10, 10, 0.85);
             border: 2px solid var(--neon-purple);
             box-shadow: 0 0 20px var(--neon-purple), inset 0 0 10px var(--neon-purple);
             padding: 50px;
             border-radius: 5px;
             text-align: center;
-            position: relative;
             max-width: 90%;
-            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%); /* Corte estilo gamer */
+            clip-path: polygon(0% 15%, 15% 0%, 100% 0%, 100% 85%, 85% 100%, 0% 100%);
         }
 
-        /* Nombre Principal Super S GMR Style */
         h1 {
             font-family: 'Orbitron', sans-serif;
-            font-size: 4rem;
+            font-size: 3.8rem;
             margin: 0;
             text-transform: uppercase;
             font-weight: 900;
-            letter-spacing: 5px;
-            /* Degradado de la referencia */
-            background: linear-gradient(to right, var(--neon-red), var(--neon-purple), var(--neon-blue));
+            letter-spacing: 2px;
+        }
+
+        /* "Block Super" en degradado azul-morado */
+        .txt-blue-purp {
+            background: linear-gradient(to right, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(157, 0, 255, 0.6));
+        }
+
+        /* La SEGUNDA S en ROJO NEÓN */
+        .txt-red {
+            color: var(--neon-red);
+            -webkit-text-fill-color: var(--neon-red);
+            text-shadow: 0 0 15px var(--neon-red);
+        }
+
+        /* "GMR" continúa el degradado morado-azul */
+        .txt-purp-blue {
+            background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .subtitle {
@@ -68,7 +81,6 @@
             text-shadow: 0 0 5px var(--neon-blue);
         }
 
-        /* Botón de Acción Estilo Homebrew */
         .btn-sgmr {
             margin-top: 30px;
             padding: 15px 40px;
@@ -91,7 +103,6 @@
             transform: scale(1.05);
         }
 
-        /* Adorno decorativo lateral */
         .decoration {
             height: 2px;
             width: 100%;
@@ -103,12 +114,13 @@
 <body>
 
     <div class="main-panel">
-        <h1>Block SuperSGMR</h1>
+        <h1>
+            <span class="txt-blue-purp">Block Super</span><span class="txt-red">S</span><span class="txt-purp-blue">GMR</span>
+        </h1>
         <div class="subtitle">SISTEMA ACTIVO</div>
         <div class="decoration"></div>
-        <p>RECURSOS • MODDING • HOMEBREW</p>
+        <p style="letter-spacing: 3px; opacity: 0.8;">RECURSOS • MODDING • HOMEBREW</p>
         
-        <!-- Botón para tus futuros PKG o archivos -->
         <a href="#" class="btn-sgmr">ACCEDER A ARCHIVOS</a>
     </div>
 
