@@ -1,144 +1,88 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR | Hub Oficial</title>
-    <link href="fonts.googleapis.com" rel="stylesheet">
+    <title>Block SuperSGMR</title>
     <style>
-        /* CONFIGURACIÓN DE COLORES NEÓN */
-        :root {
-            --red: #ff003c;
-            --purple: #9d00ff;
-            --blue: #00d4ff;
+        /* Estilos ultra-compatibles para PS3 */
+        body {
+            background-color: #000000;
+            /* Intentamos cargar la foto, si no, queda negro limpio */
+            background-image: url('fondo.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 100% 100%;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 10px;
         }
 
-        /* 1. BODY OPTIMIZADO PARA PS3 (Evita pantalla negra) */
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #050505; /* Fondo de respaldo */
-            background-image: url('fondo.jpg'); /* Imagen directa sin filtros pesados */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            
-            color: #ffffff;
-            font-family: 'Orbitron', sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            min-height: 100vh;
+        /* Título con colores sólidos (La PS3 no soporta degradados en texto) */
+        h1 {
+            font-size: 40px;
+            margin: 20px 0 5px 0;
+        }
+
+        .blo-red { color: #ff0000; font-weight: bold; }
+        .blue { color: #00d4ff; font-weight: bold; }
+        .red-s { color: #ff0000; font-weight: bold; text-decoration: underline; }
+
+        .sub { 
+            color: #00d4ff; 
+            font-size: 14px; 
+            letter-spacing: 3px; 
+            margin-bottom: 20px; 
+        }
+
+        /* Menú sólido (Sin transparencias raras que la PS3 no entiende) */
+        .panel {
+            background-color: #0a0a0a;
+            border: 2px solid #9d00ff;
+            display: inline-block;
+            width: 90%;
+            max-width: 500px;
             padding: 20px;
         }
 
-        /* TITULO: Blo y S en Rojo con degradado suave */
-        .title-container {
-            text-align: center;
-            margin-bottom: 30px;
-            background: rgba(0, 0, 0, 0.5); /* Sombra para que se lea bien sobre la foto */
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        h1 {
-            font-size: clamp(1.8rem, 8vw, 3.5rem);
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* Blo en Rojo Difuminado */
-        .red-fade {
-            color: var(--red);
-            text-shadow: 0 0 5px rgba(255, 0, 60, 0.6);
-            /* Degradado solo para PC/Móvil */
-            background: linear-gradient(to right, var(--red), var(--purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* ck Super y GMR en Azul/Morado */
-        .purp-blue-fade {
-            color: var(--blue);
-            background: linear-gradient(to right, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-            color: var(--blue);
-            letter-spacing: 5px;
-            font-size: clamp(0.7rem, 3vw, 0.9rem);
-            margin-top: 10px;
-            text-shadow: 0 0 5px var(--blue);
-        }
-
-        /* PANEL CENTRAL: Estilo Super S GMR con cortes poligonales */
-        .menu-container {
-            background: rgba(10, 10, 10, 0.9);
-            border-top: 3px solid var(--purple);
-            border-bottom: 3px solid var(--blue);
-            padding: 30px 20px;
-            width: 100%;
-            max-width: 600px;
-            /* Corte estilo gamer que PS3 soporta básico */
-            border-radius: 5px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
-        }
-
-        /* BOTONES: Animación de elección */
-        .btn-group {
+        /* Botones estilo lista con animación clásica */
+        .boton {
             display: block;
-            margin: 12px 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
             text-decoration: none;
-            padding: 18px;
-            color: white;
-            border: 1px solid #222;
-            background: rgba(255, 255, 255, 0.05);
-            font-size: 1rem;
-            text-transform: uppercase;
-            transition: 0.3s;
-            border-left: 4px solid transparent;
-        }
-
-        /* Al seleccionar o pasar el mouse (Animación de elección) */
-        .btn-group:hover, .btn-group:active {
-            background: var(--red);
-            color: #000;
-            border-left: 12px solid var(--blue);
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #333333;
+            font-size: 18px;
             font-weight: bold;
         }
 
-        .footer-info {
-            margin-top: auto;
-            padding: 20px;
-            font-size: 0.7rem;
-            color: #666;
-            letter-spacing: 2px;
+        /* La PS3 solo entiende este cambio de color al pasar el cursor */
+        .boton:hover {
+            background-color: #ff0000;
+            color: #000000;
         }
+
+        .info { color: #444; font-size: 10px; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <div class="title-container">
-        <h1>
-            <span class="red-fade">Blo</span><span class="purp-blue-fade">ck Super</span><span class="red-fade">S</span><span class="purp-blue-fade">GMR</span>
-        </h1>
-        <div class="subtitle">SISTEMA ACTIVO • 2025</div>
+    <h1>
+        <span class="blo-red">Blo</span><span class="blue">ck Super</span><span class="red-s">S</span><span class="blue">GMR</span>
+    </h1>
+    <div class="sub">SISTEMA HUB 2025</div>
+
+    <div class="panel">
+        <a href="#" class="boton">ARCHIVOS PRINCIPALES</a>
+        <a href="#" class="boton">APPS HOMEBREW</a>
+        <a href="#" class="boton">EXTRAS Y MODS</a>
+        <a href="#" class="boton">REDES OFICIALES</a>
     </div>
 
-    <nav class="menu-container">
-        <a href="#" class="btn-group">📂 ARCHIVOS PRINCIPALES</a>
-        <a href="#" class="btn-group">🎮 APPS HOMEBREW</a>
-        <a href="#" class="btn-group">🛠️ EXTRAS & MODS</a>
-        <a href="#" class="btn-group">🌐 REDES OFICIALES</a>
-    </nav>
-
-    <div class="footer-info">
-        OPTIMIZADO PARA PS3 | PC | MÓVIL
-    </div>
+    <div class="info">OPTIMIZADO PARA NAVEGADOR PLAYSTATION 3</div>
 
 </body>
 </html>
