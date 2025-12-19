@@ -1,77 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Block SuperSGMR</title>
+    <!-- Arquitectura optimizada para PS3 - 2025 -->
+    <title>Block SuperSGMR | PS3 Hub</title>
     <style>
-        /* FONDO DE COLORES SUPER S GMR (ROJO, MORADO, AZUL) */
+        /* CSS Básico: La PS3 lo lee de arriba hacia abajo sin errores */
         body {
+            background-color: #050505; /* Fondo Negro Espacial */
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif; /* Fuentes internas de PS3 */
             margin: 0;
             padding: 0;
-            min-height: 100vh;
-            /* Degradado fijo que PS3 y Celular entienden perfectamente */
-            background-color: #050505;
-            background: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
-            background-attachment: fixed;
-            
-            color: #ffffff;
-            font-family: Arial, sans-serif;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        h1 { 
-            font-size: 32px; 
-            margin: 30px 0 10px 0;
-            text-shadow: 2px 2px 4px #000000;
+        /* Contenedor para evitar que el contenido se desborde */
+        .wrapper {
+            width: 100%;
+            padding-top: 30px;
         }
-        
-        .rojo { color: #ff0000; font-weight: bold; }
-        .azul { color: #00d4ff; font-weight: bold; }
 
-        /* Panel Central compatible */
-        .panel {
-            background-color: rgba(0, 0, 0, 0.85);
-            border: 2px solid #ffffff;
+        /* Título con colores sólidos (PS3 no soporta degradados en texto) */
+        .brand {
+            font-size: 32px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* Colores Super S GMR */
+        .red { color: #FF0000; }
+        .blue { color: #00D4FF; }
+        .purple { color: #9D00FF; }
+
+        .sub-tag {
+            color: #00D4FF;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+        }
+
+        /* El Panel Central: Usamos bordes sólidos, no sombras pesadas */
+        .main-panel {
+            background-color: #111111;
+            border: 3px solid #9D00FF;
+            display: inline-block;
             width: 90%;
             max-width: 500px;
             padding: 20px;
-            margin-top: 20px;
-            box-sizing: border-box;
+            border-radius: 10px;
         }
 
-        .btn {
+        /* Botones: Diseño de lista clásica (Más fácil de usar con el mando) */
+        .menu-item {
             display: block;
-            background-color: #1a1a1a;
-            color: #ffffff;
+            background-color: #1A1A1A;
+            color: #FFFFFF;
             text-decoration: none;
-            padding: 20px;
+            padding: 18px;
             margin: 10px 0;
-            border: 1px solid #444444;
+            border: 1px solid #333333;
             font-size: 18px;
             font-weight: bold;
         }
 
-        .btn:hover, .btn:active {
-            background-color: #ff0000;
-            color: #ffffff;
+        /* Cambio de color al seleccionar (Animación de elección) */
+        .menu-item:hover {
+            background-color: #FF0000;
+            color: #000000;
+            border: 1px solid #FFFFFF;
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #555555;
         }
     </style>
 </head>
 <body>
 
-    <h1>
-        <span class="rojo">Blo</span><span class="azul">ck Super</span><span class="rojo">S</span><span class="azul">GMR</span>
-    </h1>
+    <div class="wrapper">
+        <!-- Nombre Principal Block SuperSGMR -->
+        <div class="brand">
+            <span class="red">Blo</span><span class="blue">ck Super</span><span class="red">S</span><span class="blue">GMR</span>
+        </div>
+        
+        <div class="sub-tag">SYSTEM HUB • 2025</div>
 
-    <div class="panel">
-        <a href="#" class="btn">ARCHIVOS PRINCIPALES</a>
-        <a href="#" class="btn">APPS HOMEBREW</a>
-        <a href="#" class="btn">EXTRAS Y MODS</a>
-        <a href="#" class="btn">REDES OFICIALES</a>
+        <!-- Menú Principal -->
+        <div class="main-panel">
+            <a href="#" class="menu-item">📂 ARCHIVOS PRINCIPALES</a>
+            <a href="#" class="menu-item">🎮 APPS HOMEBREW</a>
+            <a href="#" class="btn menu-item">🛠️ EXTRAS & MODS</a>
+            <a href="#" class="menu-item">🌐 REDES OFICIALES</a>
+        </div>
+
+        <div class="footer">
+            COMPATIBILIDAD GARANTIZADA: PLAYSTATION 3
+        </div>
     </div>
 
 </body>
