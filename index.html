@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura 2025 - Fondo Oscuro Chisporroteado Pixelado */
+        /* Arquitectura 2025 - Estructura Protegida */
         body {
             background-color: #050505;
-            /* Mezcla de degradado invertido con textura de ruido pixelado */
             background-image: 
                 radial-gradient(circle at 20% 30%, rgba(0, 0, 255, 0.15), transparent 40%),
                 radial-gradient(circle at 80% 70%, rgba(255, 0, 0, 0.15), transparent 40%),
@@ -24,7 +23,7 @@
 
         .wrapper { width: 100%; padding-top: 30px; padding-bottom: 30px; }
 
-        /* NOMBRE: Degradado BLO + S roja con espacio exacto */
+        /* NOMBRE: BLO DEGRADADO + S ROJA CON ESPACIO */
         .brand {
             font-size: 50px;
             font-weight: 900;
@@ -56,13 +55,13 @@
             justify-content: center;
             gap: 20px;
             width: 96%;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .menu-block {
-            flex: 1 1 280px;
-            max-width: 320px;
+            flex: 1 1 240px;
+            max-width: 280px;
             display: flex;
             flex-direction: column;
         }
@@ -71,7 +70,7 @@
             background-color: rgba(26, 26, 26, 0.8);
             color: #ffffff;
             text-decoration: none;
-            padding: 18px 25px;
+            padding: 18px 20px;
             font-size: 20px;
             font-weight: bold;
             border: 2px solid #333;
@@ -88,7 +87,7 @@
             border-color: #ffffff;
         }
 
-        /* SUBMENÚS: Despliegue hacia abajo */
+        /* SUBMENÚS INDEPENDIENTES */
         .submenu {
             display: none;
             background: rgba(0, 0, 0, 0.9);
@@ -127,7 +126,7 @@
 <body>
 
 <div class="wrapper">
-    <!-- TITULO PROTEGIDO -->
+    <!-- MARCA PROTEGIDA -->
     <div class="brand">
         BLOCK SUPER<span class="red-s-fix">S</span>GMR
     </div>
@@ -164,6 +163,14 @@
                 <a href="#" class="sub-option">PKGI</a>
                 <a href="#" class="sub-option">FIX</a>
                 <a href="#" class="sub-option">MULTI FIX</a>
+            </div>
+        </div>
+
+        <!-- EXTRAS (NUEVO BOTÓN) -->
+        <div class="menu-block">
+            <div class="menu-item" onclick="toggleMenu('m4')">✨ EXTRAS</div>
+            <div id="m4" class="submenu">
+                <a href="#" class="sub-option">DESCARGAS</a>
             </div>
         </div>
 
