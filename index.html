@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOCK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* Arquitectura fija y segura - Optimizada Diciembre 2025 */
+        /* Arquitectura fija y segura - Optimizada 2025 */
         body {
             background-color: #050505;
             background-image: linear-gradient(135deg, #ff0000 0%, #800080 50%, #0000ff 100%);
@@ -20,7 +20,7 @@
 
         .wrapper { width: 100%; padding-top: 10px; padding-bottom: 30px; }
 
-        /* TITULO: SE MANTIENE BLO Y S EN ROJO + ESPACIADO */
+        /* TITULO PROTEGIDO: BLO (ROJO), S (AZUL), SEGUNDA S (ROJO + ESPACIO) */
         .brand {
             font-size: 55px;
             font-weight: 900;
@@ -31,7 +31,7 @@
         }
         .red { color: #ff0000; }
         .blue { color: #00d4ff; }
-        .space-s { display: inline-block; margin-left: 20px; margin-right: 20px; }
+        .space-s { display: inline-block; margin-left: 20px; margin-right: 20px; color: #ff0000; }
 
         .sub-tag {
             color: #00d4ff; font-size: 18px; font-weight: bold;
@@ -49,8 +49,8 @@
             box-sizing: border-box;
         }
 
-        /* Estilo de Hileras */
-        .menu-row { margin-bottom: 10px; }
+        /* Interfaz en Filas (Hileras) */
+        .menu-row { margin-bottom: 10px; width: 100%; }
 
         .menu-item {
             display: block;
@@ -64,10 +64,11 @@
             border-radius: 8px;
             cursor: pointer;
             width: 100%;
+            box-sizing: border-box;
         }
-        .menu-item:hover { background-color: #9d00ff; }
+        .menu-item:hover { background-color: #9d00ff; border-color: #fff; }
 
-        /* Submenús Desplegables */
+        /* Submenús */
         .submenu {
             display: none;
             background: #000;
@@ -84,8 +85,9 @@
             border-bottom: 1px solid #222;
             font-size: 18px;
         }
+        .sub-option:hover { color: #ff0000; background: #111; }
 
-        /* NUNCA CAMBIAR: REDES SOCIALES */
+        /* PROTEGIDO: REDES SOCIALES */
         .social-section {
             margin-top: 20px;
             padding-top: 15px;
@@ -98,7 +100,7 @@
             text-decoration: none; border-radius: 5px; border: 1px solid #9d00ff;
         }
 
-        /* NUNCA CAMBIAR: PAGINA OFICIAL */
+        /* PROTEGIDO: PAGINA OFICIAL */
         footer {
             margin-top: 20px;
             font-size: 14px;
@@ -111,40 +113,57 @@
 <body>
 
 <div class="wrapper">
-    <!-- TITULO PROTEGIDO: BLO Y S EN ROJO + ESPACIO -->
+    <!-- TITULO: BLO (ROJO) + S (AZUL) + SEGUNDA S (ROJO CON ESPACIO) -->
     <div class="brand">
-        <span class="red">BLO</span>CK <span class="red space-s">S</span>UPERSGMR
+        <span class="red">BLO</span>CK <span class="blue">S</span>UPER<span class="space-s">S</span>GMR
     </div>
     <div class="sub-tag">PORTAL OFICIAL 2025</div>
 
     <div class="main-panel">
         
-        <!-- Hilera: Descargas -->
+        <!-- Fila 1: Juegos -->
         <div class="menu-row">
-            <div class="menu-item" onclick="toggleMenu('descargas')">📂 DESCARGAS</div>
-            <div id="descargas" class="submenu">
-                <a href="#" class="sub-option">📥 JUEGOS ISO</a>
-                <a href="#" class="sub-option">📁 PKG / DLC</a>
-                <a href="#" class="sub-option">💾 SAVEDATA</a>
+            <div class="menu-item" onclick="toggleMenu('juegos')">🎮 JUEGOS</div>
+            <div id="juegos" class="submenu">
+                <a href="#" class="sub-option">INSTALAR JUEGOS</a>
+                <a href="#" class="sub-option">EMULADORES</a>
             </div>
         </div>
 
-        <!-- Hilera: Extras -->
+        <!-- Fila 2: Apps (Restaurado) -->
+        <div class="menu-row">
+            <div class="menu-item" onclick="toggleMenu('apps')">🛠️ APPS</div>
+            <div id="apps" class="submenu">
+                <a href="#" class="sub-option">HERRAMIENTAS SISTEMA</a>
+                <a href="#" class="sub-option">MULTIMEDIA</a>
+            </div>
+        </div>
+
+        <!-- Fila 3: Descargas -->
+        <div class="menu-row">
+            <div class="menu-item" onclick="toggleMenu('descargas')">📂 DESCARGAS</div>
+            <div id="descargas" class="submenu">
+                <a href="#" class="sub-option">📥 ISOs / PKGs</a>
+                <a href="#" class="sub-option">📁 DLCs</a>
+                <a href="#" class="sub-option">💾 SAVEGAMES</a>
+            </div>
+        </div>
+
+        <!-- Fila 4: Extras -->
         <div class="menu-row">
             <div class="menu-item" onclick="toggleMenu('extras')">✨ EXTRAS</div>
             <div id="extras" class="submenu">
                 <a href="#" class="sub-option">🖼️ WALLPAPERS</a>
-                <a href="#" class="sub-option">🛠️ MODS</a>
-                <a href="#" class="sub-option">🎁 SORPRESAS</a>
+                <a href="#" class="sub-option">🎁 CONTENIDO EXTRA</a>
             </div>
         </div>
 
-        <!-- Opción directa -->
+        <!-- Fila 5: Comunidad -->
         <div class="menu-row">
             <a href="#" class="menu-item">🌐 COMUNIDAD</a>
         </div>
 
-        <!-- SECCIÓN PROTEGIDA: REDES SOCIALES -->
+        <!-- REDES SOCIALES (NUNCA CAMBIA) -->
         <div class="social-section">
             <div class="social-title">SÍGUEME EN MIS REDES SOCIALES</div>
             <div class="social-links">
@@ -155,7 +174,7 @@
         </div>
     </div>
 
-    <!-- SECCIÓN PROTEGIDA: PAGINA OFICIAL -->
+    <!-- PIE DE PAGINA (NUNCA CAMBIA) -->
     <footer>
         PAGINA OFICIAL
     </footer>
@@ -165,9 +184,7 @@
     function toggleMenu(id) {
         var menu = document.getElementById(id);
         var isVisible = menu.style.display === "block";
-        // Cierra todos primero
         document.querySelectorAll('.submenu').forEach(m => m.style.display = 'none');
-        // Abre el seleccionado si estaba cerrado
         if (!isVisible) { menu.style.display = "block"; }
     }
 </script>
