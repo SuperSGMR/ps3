@@ -49,30 +49,18 @@
             letter-spacing: 2px;
         }
 
-        /* "Blo" inicia en rojo y se difumina al azul/morado */
-        .txt-blo-red {
-            background: linear-gradient(to right, var(--neon-red), var(--neon-blue), var(--neon-purple));
+        /* Efecto unificado para "Blo" y la segunda "S" */
+        /* Empieza en el rojo exacto y se difumina hacia azul/morado */
+        .red-fade {
+            background: linear-gradient(to right, var(--neon-red) 20%, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            /* Brillo suave unificado */
+            filter: drop-shadow(0 0 5px rgba(255, 0, 60, 0.4));
         }
 
-        /* El resto de "ck Super" en degradado azul-morado */
-        .txt-blue-purp {
-            background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        /* La SEGUNDA S en ROJO con brillo reducido */
-        .txt-red-soft {
-            color: var(--neon-red);
-            -webkit-text-fill-color: var(--neon-red);
-            /* Brillo reducido (antes era 15px, ahora 6px) */
-            text-shadow: 0 0 6px rgba(255, 0, 60, 0.6);
-        }
-
-        /* "GMR" continúa el degradado */
-        .txt-purp-blue {
+        /* "ck Super" y "GMR" mantienen el flujo de color */
+        .blue-purp-fade {
             background: linear-gradient(to right, var(--neon-purple), var(--neon-blue));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -121,7 +109,7 @@
 
     <div class="main-panel">
         <h1>
-            <span class="txt-blo-red">Blo</span><span class="txt-blue-purp">ck Super</span><span class="txt-red-soft">S</span><span class="txt-purp-blue">GMR</span>
+            <span class="red-fade">Blo</span><span class="blue-purp-fade">ck Super</span><span class="red-fade">S</span><span class="blue-purp-fade">GMR</span>
         </h1>
         <div class="subtitle">SISTEMA ACTIVO</div>
         <div class="decoration"></div>
