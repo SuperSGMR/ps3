@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BLOGK SUPERSGMR | OFICIAL HUB</title>
     <style>
-        /* FONDO OPTIMIZADO PARA PS3 - PIXELADO Y DIFUMINADO */
+        /* FONDO PERSONALIZADO CON COLORES SUPER S GMR - OPTIMIZADO PARA PS3 */
         body {
             background-color: #050505;
-            /* Patrón de píxeles simplificado para compatibilidad con PS3 */
             background-image: 
+                radial-gradient(circle at 20% 20%, rgba(255, 0, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(0, 255, 255, 0.1) 0%, transparent 40%),
                 radial-gradient(circle, #1a0033 1px, transparent 1px),
-                linear-gradient(to bottom, #050505, #100020, #050505);
-            background-size: 4px 4px, 100% 100%;
+                linear-gradient(135deg, #050505 0%, #1a001a 35%, #000033 70%, #050505 100%);
+            background-size: 100% 100%, 100% 100%, 6px 6px, 100% 100%;
             background-attachment: fixed;
             color: #ffffff;
             font-family: Arial, Helvetica, sans-serif;
@@ -21,36 +22,39 @@
 
         .wrapper { 
             width: 100%; padding-top: 30px; padding-bottom: 30px;
-            /* Capa de difuminado sobre el pixelado */
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             min-height: 100vh;
         }
         
-        /* IDENTIDAD VISUAL - ARQUITECTURA FIJA */
+        /* TÍTULO OPTIMIZADO PARA PS3 CON COLORES SÓLIDOS Y DIFUMINADO EXTERNO */
         .brand { 
             font-size: 48px; 
             font-weight: 900; 
             text-transform: uppercase; 
             margin-bottom: 15px; 
             display: block;
-            /* Filtros limitados para mejor rendimiento en PS3 */
-            filter: drop-shadow(0 0 8px rgba(255, 0, 0, 0.5));
+            /* El difuminado sólido se logra con text-shadow, muy compatible con PS3 */
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
         }
 
-        .gradient-text {
-            display: inline-block;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            background-image: linear-gradient(to right, #ff0000 0%, #9d00ff 40%, #0077ff 75%, #00ffff 100%);
-        }
+        /* Colores individuales letra por letra para asegurar visibilidad en PS3 */
+        .c1 { color: #ff0000; } /* Rojo inicial */
+        .c2 { color: #e6004d; }
+        .c3 { color: #cc0099; }
+        .c4 { color: #b300e6; }
+        .c5 { color: #9d00ff; } /* Morado */
+        .c6 { color: #6633ff; }
+        .c7 { color: #3366ff; }
+        .c8 { color: #0099ff; } /* Azul */
+        .c9 { color: #00ccff; }
+        .c10 { color: #00ffff; } /* Cian */
 
         .red-s-fix { 
             color: #ff0000; 
             display: inline-block; 
             margin-left: 2px; 
             margin-right: 2px; 
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+            text-shadow: 0 0 15px #ff0000, 0 0 5px #ffffff;
         }
         
         .sub-tag { 
@@ -64,6 +68,7 @@
             padding: 2px 12px; 
             display: inline-block;
             border-radius: 50px; 
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5); 
             text-transform: uppercase;
             border: 1.5px solid rgba(255,255,255,0.7);
             line-height: 1.2;
@@ -80,14 +85,16 @@
             font-size: 20px; font-weight: bold; border: 2px solid #555; 
             border-radius: 12px; cursor: pointer; display: block; text-decoration: none; 
             transition: 0.3s;
+            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
         }
         .menu-item:hover { 
             background-color: #9d00ff; 
             border-color: #ffffff; 
+            box-shadow: 0 0 15px rgba(157, 0, 255, 0.6);
         }
 
         .submenu { 
-            display: none; background-color: #000000; 
+            display: none; background-color: rgba(0, 0, 0, 0.95); 
             border: 2px solid #9d00ff; border-radius: 12px; 
             margin-top: 10px; text-align: left; overflow: hidden; 
         }
@@ -119,6 +126,7 @@
             font-size: 20px; font-weight: bold; border: 3px solid #ff0000; 
             border-radius: 12px; text-decoration: none; display: block; 
             box-sizing: border-box; transition: 0.3s;
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
         }
         .paypal-btn:hover { 
             background-color: #ff0000; 
@@ -130,7 +138,6 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.6);
             border-top: 1px solid rgba(157,0,255,0.5);
-            margin-bottom: 0; 
         }
         .social-title {
             color: #d1a3ff;
@@ -154,10 +161,6 @@
             font-size: 14px;
             font-weight: bold;
             border: 1px solid #444;
-            transition: 0.3s;
-        }
-        .social-link:hover {
-            border-color: #00bfff;
         }
         
         .official-text {
@@ -170,21 +173,6 @@
             letter-spacing: 3px;
         }
 
-        footer { 
-            margin-top: 30px; 
-            padding-bottom: 40px;
-        }
-        
-        .footer-suggestion { 
-            display: block;
-            font-size: 12px; 
-            color: #ffffff;
-            font-style: italic; 
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.4;
-        }
-
         @media (max-width: 600px) {
             .brand { font-size: 32px; }
             .menu-block, .paypal-block { width: 90%; margin: 10px auto; }
@@ -195,10 +183,11 @@
 
 <div class="wrapper">
     <div class="brand">
-        <span class="gradient-text">BLOGK</span>
-        <span class="gradient-text">SUPER</span>
+        <!-- Título letra por letra para asegurar compatibilidad y color sólido -->
+        <span class="c1">B</span><span class="c2">L</span><span class="c3">O</span><span class="c4">G</span><span class="c5">K</span> 
+        <span class="c6">S</span><span class="c7">U</span><span class="c8">P</span><span class="c9">E</span><span class="c10">R</span>
         <span class="red-s-fix">S</span>
-        <span class="gradient-text">GMR</span>
+        <span class="c8">G</span><span class="c9">M</span><span class="c10">R</span>
     </div>
     
     <div class="sub-tag">WEB OFICIAL 2026</div>
@@ -296,10 +285,6 @@
     </div>
 
     <span class="official-text">PAGINA OFICIAL</span>
-
-    <footer>
-        <span class="footer-suggestion"> Sugerencia: Si algún enlace falla, infórmalo en nuestro canal de Discord para arreglarlo rápido.</span>
-    </footer>
 </div>
 
 <script>
